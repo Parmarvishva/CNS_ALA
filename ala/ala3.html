@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HMAC</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body { background: #f5f7fa; }
+            .header { text-align: center; margin-bottom: 30px; }
+            .logo { width: 120px; }
+        </style>
+    </head>
+    <body class="p-4">
+    <div class="container">
+        <div class="header">
+            <img src="../images/gmiu.webp" class="logo">
+            <h2>HMAC Authentication</h2>
+        </div>
+        <div class="row">
+            <!-- Sender -->
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <h5>Sender</h5> 
+                    <textarea id="senderMsg" class="form-control mb-2"></textarea>
+                    <input type="password" id="senderKey" class="form-control mb-2">
+                    <button class="btn btn-primary" onclick="generateMAC()">Generate MAC</button>
+                    <p id="senderMac" class="mt-2"></p>
+                </div>
+            </div>
+            <!-- Receiver -->
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <h5>Receiver</h5>
+                    <textarea id="receiverMsg" class="form-control mb-2"></textarea>
+                    <input type="password" id="receiverKey" class="form-control mb-2">
+                    <button class="btn btn-success" onclick="verifyMAC()">Verify</button>
+                    <br> 
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-secondary" onclick="goTo('ala2.html')">← Previous</button>
+            <button class="btn btn-success" onclick="goTo('../index.html')">Home</button>
+        </div>
+    </div>
+    <script src="js/original_ala3.js"></script>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CNS ALA System</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                background: #f4f6f9;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .logo {
+                width: 140px;
+                margin-bottom: 10px;
+            }
+            .card-custom {
+                background: white;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+            .info-box {
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                background: #fafafa;
+            }
+            .btn-main {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <!-- HEADER -->
+            <div class="header">
+                <img src="images/gmiu.webp" class="logo">
+                <h2>Gyanmanjari Innovative University</h2>
+                <p>Cryptography & Network Security - ALA Implementation</p>
+            </div>
+            <!-- INTRODUCTION -->
+            <div class="card-custom mb-4">
+                <h4 class="mb-3">Project Information</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <strong>Developer:</strong><br>
+                            Vishva Parmar
+                        </div>
+                        <div class="info-box">
+                            <strong>Enrollment No:</strong><br>
+                            240905091015
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <strong>Subject:</strong><br>
+                            Cryptography & Network Security
+                        </div>
+                        <div class="info-box">
+                            <strong>University:</strong><br>
+                            GMIU
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODE SELECTION -->
+            <div class="card-custom text-center mb-4">
+                <h4>Select Mode</h4>
+                <button class="btn btn-primary btn-main mt-3" onclick="showManual()">Manual Execution</button>
+                <button class="btn btn-success btn-main mt-2" onclick="showPDF()">View Output PDF</button>
+            </div>
+            <!-- MANUAL -->
+            <div id="manualSection" class="card-custom text-center mb-4" style="display:none;">
+                <h4>Select ALA</h4>
+                <button class="btn btn-outline-primary btn-main mt-2" onclick="openALA('ala1.html')">ALA 1 - Digital Signature</button>
+                <button class="btn btn-outline-primary btn-main mt-2" onclick="openALA('ala2.html')">ALA 2 - SHA Analyzer</button>
+                <button class="btn btn-outline-primary btn-main mt-2" onclick="openALA('ala3.html')">ALA 3 - HMAC</button>
+            </div>
+            <!-- PDF -->
+            <div id="pdfSection" class="card-custom mb-4" style="display:none;">
+                <h4>PDF Outputs</h4>
+                <ul>
+                    <li><a href="PDFs/ala1.pdf" target="_blank">ALA 1 - Digital Signature</a></li>
+                    <li><a href="PDFs/ala2.pdf" target="_blank">ALA 2 - SHA Analysis</a></li>
+                    <li><a href="PDFs/ala3.pdf" target="_blank">ALA 3 - HMAC</a></li>
+                </ul>
+                <div class="mt-3">
+                    <h5>Instructions</h5>
+                    <ol>
+                        <li>All ALA algorithms are implemented using Python.</li>
+                        <li>Execution is performed locally.</li>
+                        <li>Outputs are generated and exported as PDF.</li>
+                        <li>PDF files are stored in the "PDFs" folder.</li>
+                        <li>Click above links to view results.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showManual() {
+                document.getElementById("manualSection").style.display = "block";
+                document.getElementById("pdfSection").style.display = "none";
+            }
+            function showPDF() {
+                document.getElementById("manualSection").style.display = "none";
+                document.getElementById("pdfSection").style.display = "block";
+            }
+            function openALA(file) {
+                window.location.href = "ala/" + file;
+            }
+        </script>
+    </body>
+</html>

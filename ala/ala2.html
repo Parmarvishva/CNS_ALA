@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SHA Analyzer</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body { background: #f5f7fa; }
+            .header { text-align: center; margin-bottom: 30px; }
+            .logo { width: 120px; }
+            textarea { font-family: monospace; }
+        </style>
+    </head>
+    <body class="p-4">
+        <div class="container">
+            <div class="header">
+                <img src="../images/gmiu.webp" class="logo">
+                <h2>SHA Integrity Analyzer</h2>
+            </div>
+            <div class="card p-3 mb-3">
+                <h5>Input Messages</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Original</label>
+                        <textarea id="inputOg" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Modified</label>
+                        <textarea id="inputMod" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-3" onclick="analyzeHashes()">Analyze</button>
+            </div>
+            <div class="card p-3">
+                <h5>Output</h5>
+                <p><b>SHA-1:</b></p>
+                <div id="ogSha1"></div>
+                <div id="modSha1"></div>
+                <p class="mt-3"><b>SHA-256:</b></p>
+                <div id="ogSha256"></div>
+                <div id="modSha256"></div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary" onclick="goTo('ala1.html')">← Previous</button>
+                <button class="btn btn-primary" onclick="goTo('ala3.html')">Next →</button>
+            </div>
+        </div>
+        <script src="js/original_ala2.js"></script>
+    </body>
+</html>
